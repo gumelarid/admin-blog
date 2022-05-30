@@ -25,9 +25,9 @@ class DatabaseSeeder extends Seeder
         // user
         User::create([
             'user_id' => Str::uuid(),
-            'user_name' => 'Admin',
-            'email' => 'admin@gmail.com',
-            'password' => Hash::make('11111111'),
+            'user_name' => 'Galuh Prahadi',
+            'email' => 'galuhprahadi96@gmail.com',
+            'password' => Hash::make('prahadi96'),
             'status'    => 1,
             'role_id'   => 1,
             'profile'   => 'default.png'
@@ -107,6 +107,32 @@ class DatabaseSeeder extends Seeder
             'is_active'         => 1,
         ]);
 
+        NavModel::create([
+            'nav_id'            => Str::uuid(),
+            'id_label'          => 1,
+            'url'               => '/dashboard/article',
+            'name'              => 'Article',
+            'icon'              => 'article',
+            'is_active'         => 1,
+        ]);
+
+        NavModel::create([
+            'nav_id'            => Str::uuid(),
+            'id_label'          => 1,
+            'url'               => '/dashboard/category',
+            'name'              => 'Category',
+            'icon'              => 'category',
+            'is_active'         => 1,
+        ]);
+
+        NavModel::create([
+            'nav_id'            => Str::uuid(),
+            'id_label'          => 1,
+            'url'               => '/dashboard/page',
+            'name'              => 'Page',
+            'icon'              => 'pages',
+            'is_active'         => 1,
+        ]);
 
         // access
         UserAccessModel::create([

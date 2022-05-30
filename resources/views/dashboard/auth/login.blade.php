@@ -34,25 +34,6 @@
               <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
                 <div class="bg-gradient-primary shadow-primary border-radius-lg py-3 pe-1">
                   <h4 class="text-white font-weight-bolder text-center mt-2 mb-0">Sign in</h4>
-                  <div class="text-center text-white">
-                    <button class="btn bg-gradient-primary w-100 my-4 mb-2" data-bs-toggle="modal" data-bs-target="#modal">Click Here User Access</button>
-                      
-                    {{--  <div class="col-2 text-center ms-auto">
-                      <a class="btn btn-link px-3" href="javascript:;">
-                        <i class="fa fa-facebook text-white text-lg"></i>
-                      </a>
-                    </div>
-                    <div class="col-2 text-center px-1">
-                      <a class="btn btn-link px-3" href="javascript:;">
-                        <i class="fa fa-github text-white text-lg"></i>
-                      </a>
-                    </div>
-                    <div class="col-2 text-center me-auto">
-                      <a class="btn btn-link px-3" href="javascript:;">
-                        <i class="fa fa-google text-white text-lg"></i>
-                      </a>
-                    </div> --}}
-                  </div>
                 </div>
               </div>
               <div class="card-body">
@@ -82,10 +63,6 @@
                   <div class="text-center">
                     <button type="submit" class="btn bg-gradient-primary w-100 my-4 mb-2">Sign in</button>
                   </div>
-                  {{-- <p class="mt-4 text-sm text-center">
-                    Don't have an account?
-                    <a href="#" class="text-primary text-gradient font-weight-bold">Sign up</a>
-                  </p> --}}
                 </form>
               </div>
             </div>
@@ -110,31 +87,6 @@
       </footer>
     </div>
   </main>
-
-  <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modal" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-md" role="document">
-      <div class="modal-content">
-        <div class="modal-body p-0">
-          <div class="card card-plain">
-            <div class="card-header pb-0 text-left">
-              <h5 id="header">User Login</h5>
-            </div>
-            <div class="card-body">
-              <h1>Input this</h1>
-              <div>
-                <label class="font-weight-bolder">Email</label>
-                <p>admin@gmail.com</p>
-              </div>
-              <div>
-                <label class="font-weight-bolder">Password</label>
-                <p>111111</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
 
 
   <!--   Core JS Files   -->
