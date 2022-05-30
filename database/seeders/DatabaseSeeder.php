@@ -11,6 +11,7 @@ use App\Models\RoleModel;
 use App\Models\SettingModel;
 use App\Models\User;
 use App\Models\UserAccessModel;
+use App\Models\UserDetailModel;
 use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
@@ -23,14 +24,20 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // user
+        $user_id = Str::uuid();
         User::create([
-            'user_id' => Str::uuid(),
+            'user_id' => $user_id,
             'user_name' => 'Galuh Prahadi',
             'email' => 'galuhprahadi96@gmail.com',
             'password' => Hash::make('prahadi96'),
             'status'    => 1,
             'role_id'   => 1,
             'profile'   => 'default.png'
+        ]);
+
+        UserDetailModel::create([
+            'user_id' => $user_id,
+            'detail' => 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime, culpa repellendus explicabo laudantium dolorum eligendi corrupti dolore aliquam amet, deserunt adipisci laborum velit porro quis aperiam quasi dolores beatae modi!.'
         ]);
 
         // role

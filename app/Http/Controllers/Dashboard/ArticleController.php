@@ -68,7 +68,7 @@ class ArticleController extends Controller
             'meta_description'  => (isset($request->meta)) ? $request->meta : '',
             'description'       => (isset($request->description)) ? $request->description : '',
             'status'            => (isset($request->is_publish)) ? 1 : 0,
-            'thumbnail'         => ($request->file('thumb') !== null ) ? $this->_upload($request->file('thumb')) : null,
+            'thumbnail'         => ($request->file('thumb') !== null ) ? $this->_upload($request->file('thumb')) : ' ',
             'views' => 0
         ]);
 
@@ -96,6 +96,7 @@ class ArticleController extends Controller
 
     public function update(Request $request)
     {
+
         $valid = Validator($request->all(),[
             'thumb'   => 'file|image|mimes:jpeg,png,jpg|max:1048',
             'title'      => 'required',
@@ -118,7 +119,7 @@ class ArticleController extends Controller
                 File::delete('assets/article/'. $th->thumbnail);
             };
             $thumbnail = $this->_upload($request->file('thumb'));
-        }
+        };
 
         $check->update([
             'slug_article'      => Str::slug($request->title),
@@ -127,7 +128,7 @@ class ArticleController extends Controller
             'meta_description'  => (isset($request->meta)) ? $request->meta : '',
             'description'       => (isset($request->description)) ? $request->description : '',
             'status'            => ($request->is_publish == 'on') ? 1 : 0,
-            'thumbnail'         => (isset($thumbnail)) ? $thumbnail : null,
+            'thumbnail'         => (isset($thumbnail)) ? $thumbnail : $request->thumbnail,
             'views' => 0
         ]);
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
+use App\Models\UserDetailModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
@@ -28,7 +29,8 @@ class ProfileController extends Controller
     public function index(){
         $title = 'My Profile';
         $profile = User::where('user_id', Auth::user()->user_id)->first();
-        return view('dashboard.profile.index', compact('title', 'profile'));
+        $detail = UserDetailModel::where('user_id', Auth::user()->user_id)->first();
+        return view('dashboard.profile.index', compact('title', 'profile', 'detail'));
     }
 
     public function update(Request $request){
@@ -83,7 +85,9 @@ class ProfileController extends Controller
             'profile'     => $request->file() ? $profile : $profile
         ]);
 
-
+        $detail = UserDetailModel::where('user_id', $request->id)->update([
+            'detail'   => $request->detail,
+        ]);
         
         $notification = array(
             'message'       => 'Success update Profile',

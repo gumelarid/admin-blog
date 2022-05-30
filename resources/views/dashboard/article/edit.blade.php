@@ -37,7 +37,7 @@
                   <div class="col-md-4">
                     @if ($data->thumbnail)
                       <img src="{{ url('assets/article/'.$data->thumbnail) }}" class="img-thumbnail pb-2" alt="thumbnail">
-
+                      <input type="hidden" name="thumbnail" value="{{ $data->thumbnail }}">
                     @endif
                    
                     <div class="form-group">

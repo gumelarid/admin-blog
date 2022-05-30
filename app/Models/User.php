@@ -27,4 +27,5 @@ class User extends Authenticatable
     public function article(){
         return $this->hasOne(ArticleModel::class, 'user_id');
     }
+
 }

@@ -59,7 +59,7 @@
                   </div>
                   <div class="card-body p-3">
                     <p class="text-sm">
-                      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maxime, culpa repellendus explicabo laudantium dolorum eligendi corrupti dolore aliquam amet, deserunt adipisci laborum velit porro quis aperiam quasi dolores beatae modi!.
+                      {{ $detail->detail }}
                     </p>
                     <hr class="horizontal gray-light my-4">
                     <ul class="list-group">
@@ -117,6 +117,11 @@
                     <div class="input-group input-group-outline my-3">
                       <label id="lb-pass" class="form-label">New Password</label>
                       <input type="password" name="password" id="password" min="8" class="form-control" onfocus="focused(this)" onfocusout="defocused(this)">
+                    </div>
+                    <div class="input-group input-group-outline my-3">
+                      <textarea name="detail" cols="30" rows="10" class="form-control">
+                        {{ $detail->detail }}
+                      </textarea>
                     </div>
                     <div class="text-center">
                       <button type="submit" id="btn_user" class="btn btn-round bg-gradient-info btn-lg w-100 mt-4 mb-0">Update User</button>
